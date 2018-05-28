@@ -21,6 +21,7 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
+    'comma-dangle': 0,
     'generator-star-spacing': 'off', // allow async-await
     'no-multiple-empty-lines': 0,
     'no-multi-spaces': 0,
