@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>MattBillard.com</title>
+  <!--<link rel='stylesheet' href='./styles/styles.css' />-->
+
+  <!--<link rel='stylesheet' href='./styles/moveableBlocks.css' />
+  <link rel='stylesheet' href='./styles/kmDemo.css' />
+  <link rel='stylesheet' href='./styles/shared.css' />
+  <link rel='stylesheet' href='./styles/site.css' />-->
+        
+  <!-- jQuery -->
+  <script src="./scripts/jquery.min.js"></script>
+  <script src="./scripts/purl.js"></script>
+  
+  <!-- Bootstrap -->
+  <link href="./styles/bootstrap.min.css" rel="stylesheet">
+  <script src="./scripts/bootstrap.min.js"></script>
+  
+  <!-- Font Awesome -->
+  <!--<link href="../../resources/tools/fontAwesome/css/font-awesome.css" rel="stylesheet">-->
+
+  <!-- Kendo UI Mobile Demo -->
+  <link href="./styles/kmDemo.css" rel="stylesheet" />
+  <script src="./scripts/kmDemo.js"></script>
+
+  <!-- Kendo UI Mobile PHP -->
+  <script src="./scripts/kendoUiMobilePhp.js"></script>
+  
+  <!-- moveableBlocks -->
+  <link href="./styles/moveableBlocks.css" rel="stylesheet" />
+  <script src="./scripts/moveableBlocks.js"></script>
+  <script src="./scripts/hammer.js"></script>
+
+  <!-- Sugar.js -->
+  <script src="./scripts/sugar.js"></script>
+        
+  <!-- main CSS -->
+  <link href="./styles/shared.css" rel="stylesheet" />
+  <link href="./styles/site.css" rel="stylesheet" />
+        
+  <script>
+    $(document).ready(function(){
+      //Init moveableBlocks
+      moveableBlocksApp.init();
+
+      //Initialize Kendo Demo
+      kmDemo.styleDeviceWrapper();
+
+      //Center device on screen
+      kmDemo.move('default');
+      kmDemo.rotate('default');
+    });
+  </script> 
+</head>
+
+<body class="phone">
+  <div id="siteWrapper">
+
+    <nav id="navbar" class="navbar navbar-inverse navbar-fixed-top hiddenPhone" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-9">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">MattBillard.com</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9">
+        <ul class="nav navbar-nav">
+
+          <li class="dropdown"><a target="myframe" href="http://localhost:8001/">React</a></li>
+          <li class="dropdown"><a target="myframe" href="http://localhost:8002/">Vue</a></li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Change OS<b class="caret"></b></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#" onclick="kmDemo.switchOs('ios'); return false;">iOS6</a></li>
+              <li><a href="#" onclick="kmDemo.switchOs('flat'); return false;">iOS7</a></li>
+              <li><a href="#" onclick="kmDemo.switchOs('android'); return false;">Android</a></li>
+              <li><a href="#" onclick="kmDemo.switchOs('wp'); return false;">Windows</a></li>
+              <li><a href="#" onclick="kmDemo.switchOs('blackberry'); return false;">BlackBerry</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Change Width<b class="caret"></b></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#" onclick="kmDemo.changeScreenWidth('phone'); return false;">Simulate Phone Width</a></li>
+              <li><a href="#" onclick="kmDemo.changeScreenWidth('default'); return false;">Reset Width</a></li>
+              <li role="presentation" class="divider"></li>
+              <li>
+                <div class="note">
+                  <strong>Hint: </strong>
+                  thanks to responsive design, you'll get a different design if you view the site on a narrow device like a phone. You can also resize your browser.
+                </div>
+              </li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Move Phone<b class="caret"></b></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#" onclick="kmDemo.move('default'); return false;">Reset Position</a></li>
+              <li role="presentation" class="divider"></li>
+              <li>
+                <div class="note">
+                  <strong>Hint: </strong>
+                  try dragging the phone with your mouse or finger. You can even bounce it off the edges of your browser's screen.
+                </div>
+              </li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Change Rotation<b class="caret"></b></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#" onclick="kmDemo.rotate(45); return false;">Rotate 45&deg; <i class="icon-rotate-right"></i></a></li>
+              <li><a href="#" onclick="kmDemo.rotate(-45); return false;">Rotate 45&deg; <i class="icon-rotate-left"></i></a></li>
+              <li><a href="#" onclick="kmDemo.rotate('default'); return false;">Reset Rotation</a></li>
+              <li role="presentation" class="divider"></li>
+              <li>
+                <div class="note">
+                  <strong>Hint: </strong>
+                  if you have a touchscreen, try rotating the phone with one finger on the top edge of the phone and one on the bottom edge.
+                </div>
+              </li>
+            </ul>
+          </li>
+
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </nav>
+
+    <div id="moveableBlocksWrapper">
+      <div id="device-wrapper" class="mblock flat">
+        <iframe id="kmDemoIframe" name="myframe" src="http://localhost:8002/"></iframe>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
