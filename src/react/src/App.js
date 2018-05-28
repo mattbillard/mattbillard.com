@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, Route, Switch } from 'react-router-dom'
+import { Link, Redirect, Route, Switch } from 'react-router-dom'
 
 import './App.css';
 
@@ -24,6 +24,7 @@ class App extends Component {
           <Route path='/connect' component={ConnectPage}/>
           <Route path='/home' component={HomePage}/>
           <Route path='/skills' component={SkillsPage}/>
+          <Redirect from="/*" to="/home" />
         </Switch>
       </div>
     );
