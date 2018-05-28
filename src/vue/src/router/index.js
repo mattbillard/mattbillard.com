@@ -10,6 +10,7 @@ import SkillsPage from '@/pages/SkillsPage'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     { path: '/about',   name: 'AboutPage',    component: AboutPage }, 
     { path: '/connect', name: 'ConnectPage',  component: ConnectPage }, 
