@@ -1,6 +1,6 @@
 <template>
   <div class="connect-page">
-    <h1>{{ msg }}</h1>
+    <h2>{{ msg }}</h2>
   </div>
 </template>
 
