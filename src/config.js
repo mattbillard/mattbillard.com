@@ -1,7 +1,8 @@
 
 const config = {
     ports: {
-        node: 8000
+        node: 8000,
+        vue: 8002
     }
 };
 
